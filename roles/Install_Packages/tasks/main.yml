@@ -1,0 +1,23 @@
+---
+
+- name: Update server package cache
+  apt:
+    update_cache: true
+
+- name: Update server packages
+  apt:
+    upgrade: full
+
+- name: Install Required packages
+  loop: "{{ PACKAGE_LIST }}"
+  apt: 
+    name: "{{ item }}"
+    state: latest
+
+- name: Install Speedtest by Ookla
+  include_tasks: speedtest.yml
+
+- name: Install docker on server
+  tags: 
+    - docker
+  include_tasks: docker.yml

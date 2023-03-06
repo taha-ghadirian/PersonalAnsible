@@ -1,0 +1,24 @@
+---
+
+PACKAGE_LIST:
+  - zsh
+  - git
+  - curl
+  - wget
+  - tmux
+  - nano
+  - vim
+  - python3
+  - htop 
+  - zip 
+  - unzip
+  - tree
+
+    # Nvim related requirements:
+  - neovim
+  - ripgrep
+
+    # Docker related requirements
+  - ca-certificates
+  - gnupg 
+  - lsb-release

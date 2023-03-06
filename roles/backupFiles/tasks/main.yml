@@ -1,0 +1,14 @@
+---
+
+- name: Create Backup directory on local machine
+  file:
+    path: ~/backups/{{ inventory_hostname }}/
+    state: directory
+  delegate_to: localhost
+
+- name: Copy v2ray-config file from remote servers to local machine
+  fetch:
+    src: "{{ item.path }}"
+    dest: "~/backups/{{ inventory_hostname }}/{{ item.name }}"
+    flat: true
+  loop: "{{ FILE_LIST }}"

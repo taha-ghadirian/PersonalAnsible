@@ -1,0 +1,8 @@
+---
+
+FILE_LIST:
+  - name: config.json
+    path: /usr/local/x-ui/bin/config.json
+
+  - name: x-ui-english.db
+    path: /etc/x-ui-english/x-ui-english.db

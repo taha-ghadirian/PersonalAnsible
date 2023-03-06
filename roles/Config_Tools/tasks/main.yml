@@ -1,0 +1,19 @@
+---
+
+- name: ZSH configuration
+  tags:
+    - zsh 
+    - shell
+  include_tasks: zsh.yml
+
+- name: Tmux Configuration
+  tags: 
+    - tmux
+  include_tasks: tmux.yml
+
+- name: nvim Configuration
+  tags:
+    - nvim 
+    - vim 
+    - editor
+  include_tasks: nvim.yml

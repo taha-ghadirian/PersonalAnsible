@@ -1,0 +1,9 @@
+---
+
+- name: Clone Neovim Pakroh Configuration
+  tags: 
+    - nvim 
+  git:
+    repo: https://github.com/Pakrohk-DotFiles/NvPak.git
+    dest: "{{ ansible_env.HOME }}/.config/nvim"
+    depth: 1

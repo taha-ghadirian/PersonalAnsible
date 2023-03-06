@@ -1,0 +1,9 @@
+---
+
+- name: Add speedtest repository
+  shell: curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash 
+
+- name: Install Speedtes
+  apt:
+    name: speedtest 
+    state: latest

@@ -1,0 +1,14 @@
+---
+
+- name: Copy .tmux.conf file to remote server
+  copy:
+    src: tmux/tmux.conf
+    dest: "{{ ansible_env.HOME }}/.tmux.conf" # replace ansible_user with your remote user name
+    mode: '0643'
+
+- name: Copy tmux powertheme to remote server 
+  copy:
+    src: tmux/tmux-power.tmux
+    dest: "{{ ansible_env.HOME }}/.tmux-power.tmux"
+
+

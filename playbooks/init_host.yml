@@ -1,0 +1,15 @@
+---
+
+- hosts: all
+  become: true 
+
+  roles:
+    - role: Install_Packages 
+      tags: 
+        - requirement
+        - packages
+
+    - role: Config_Tools
+      tags:
+        - dotfile 
+        - config 

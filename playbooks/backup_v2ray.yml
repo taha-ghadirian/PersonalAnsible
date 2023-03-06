@@ -1,0 +1,10 @@
+---
+
+- hosts: v2ray
+
+  roles:
+    - role: backupFiles
+      tags:
+        - backup
+        - db
+        - config

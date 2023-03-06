@@ -1,0 +1,15 @@
+---
+
+
+- name: Copy .zshrc file to remote server
+  copy:
+    src: zsh/zshrc
+    dest: "{{ ansible_env.HOME }}/.zshrc"
+    mode: '0644'
+
+- name: Clone zsh-autosuggestions plugin
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+
+
