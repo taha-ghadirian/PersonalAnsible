@@ -1,0 +1,32 @@
+---
+
+- name: Create OpenSsh directory on servers
+  file:
+    path: "{{ ansible_env.HOME }}/OpenSshVpn"
+    state: directory
+
+- name: Copy ssh Dockerfile to server
+  copy:
+    src: Dockerfile
+    dest: "{{ ansible_env.HOME }}/OpenSshVpn/Dockerfile" # replace ansible_user with your remote user name
+    mode: '0643'
+
+- name: Build ssh Docker image
+  docker_image:
+    name: osshvpn
+    build:
+      pull: yes
+      path: "{{ ansible_env.HOME }}/OpenSshVpn/"
+    state: present
+    source: build
+  
+
+- name: Run ssh Docker container
+  docker_container:
+    name: OsshVpn
+    image: osshvpn
+    state: started
+    restart_policy: always
+    ports:
+      - "1879:22"
+

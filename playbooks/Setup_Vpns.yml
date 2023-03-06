@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  become: true
+
+  roles:
+    - role: OpenSSH_Server_Install
+      tags:
+        - vpn 
+        - ssh 
+        - openssh
